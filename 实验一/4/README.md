@@ -26,9 +26,11 @@ SHA1（Secure Hash Algorithm 1）是一种常见的 单向散列函数，可以�
 
 实验代码结构分析
 
+```
 import hashlib
 import itertools
 import time
+```
 
 目标哈希值（我们要反推出原始密码）
 SHA1_HASH_TARGET = "67ae1a64661ac8b4494666f58c4822408dd0a3e4"
@@ -53,9 +55,11 @@ CHAR_SETS = [
 
 3. SHA1 加密函数
 
+```
 def sha1_encrypt(input_string):
     sha = hashlib.sha1(input_string.encode())
     return sha.hexdigest()
+```
 
 这个函数用 hashlib 库计算字符串的 SHA1 值，并返回十六进制表示。
 
@@ -64,6 +68,7 @@ def sha1_encrypt(input_string):
 
 核心循环如下：
 
+```
 for i in range(2):
     for j in range(2):
         ...
@@ -77,6 +82,7 @@ for i in range(2):
                         print("password:", candidate_password)
                         ...
                         exit(0)
+```
 
 解释如下：
 	1.	外层 8 重循环
